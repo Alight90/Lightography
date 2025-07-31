@@ -1,0 +1,63 @@
+<%-include('../partials/head')%>
+<%-include('../partials/navbarcontain')%>
+<div class="offset-1 mb-4">
+<h2 class="col-12 offset-4 modName"><b>Add A New Model</b></h2>
+</div>
+<div>
+  <class class="col-6 offset-3"> <form class="row g-3 offset-1 nLink validated-form" action="/models" method="POST" novalidate>
+    <div class="col-md-6 mb-3">
+      <label for="name" class="form-label"><b>Name</b></label>
+      <input type="text" class="form-control" id="name" name="model[model]" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="eyecolor" class="form-label"><b>Eye Color</b></label>
+      <input type="text" class="form-control" id="eyecolor" name="model[eyecolor]" required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="height" class="form-label"><b>Height</b></label>
+        <input type="text" class="form-control" id="height" name="model[height]" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="city" class="form-label"><b>City</b></label>
+        <input type="text" class="form-control" id="city" name="model[city]" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="age" class="form-label"><b>Age</b></label>
+        <input type="number" class="form-control" id="age" name="model[age]" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="photolink" class="form-label"><b>Photo Link</b></label>
+        <input type="text" class="form-control" id="photolink" name="model[photo]" required>
+      </div>
+    <div class="col-12 mb-3">
+      <label for="bio" class="form-label"><b>Bio</b></label>
+      <textarea name="model[bio]" id="bio" rows="10" cols="100" class="form-control"required></textarea>
+    </div>
+        <div class="col-12 offset-5 ">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+<script>
+  (() => {
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.validated-form')
+
+// Loop over them and prevent submission
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+
+    form.classList.add('was-validated')
+  }, false)
+})
+})()
+</script>
+<%-include('../partials/prefoot')%>
+</body>
+</html>

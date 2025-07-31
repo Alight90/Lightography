@@ -1,0 +1,33 @@
+body{background-color:#f0f0f0;}
+img{width: 30em; height: 30em;}
+h1{
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nLink {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: large;
+}
+.modName {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-size: xx-large;
+}
+.insta {
+width: 5em; height: 5em;
+}
+.price{
+    height: 16em;width: 16em;
+}
+.profilesize{
+    height: 25em;width: 24em
+}
+
+.btn-cust{
+    background-color: black;
+    color: #f0f0f0;
+}
