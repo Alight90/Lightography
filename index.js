@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== `production`){
+    require(`dotenv`).config()
+}
+
 const express = require('express');
 const app = express();
 const path =require('path');
@@ -11,10 +15,11 @@ const Photo=require('./models/photo')
 const Model=require('./models/model')
 const session=require('express-session')
 const flash =require('connect-flash')
+const dbURL= process.env.mongoURL || 'mongodb://127.0.0.1:27017/photoApp'
 
 const sessionOptions ={secret:'parastroika',resave:false,saveUninitialized:false }
 
-mongoose.connect('mongodb://127.0.0.1:27017/photoApp')
+mongoose.connect(dbURL)
 .then(()=>{
     const Cat = mongoose.model('Cat', { name: String });
 
