@@ -1,5 +1,17 @@
 <%-include('../partials/head')%>
 <%-include('../partials/navbarcontain')%>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('success') === 'true') {
+    const flash = document.createElement('div');
+    flash.className = 'alert alert-success';
+    flash.textContent = 'Your message was sent successfully!';
+    document.body.prepend(flash); // Or insert it wherever you want
+  }
+</script>
+
+<% } %>
+
         <div class="row flex-nowrap">
           <div class="col"><img class="img-fluid w-100 m-1" src="edited\mynewalpaper-03.jpg" alt=""></div>
           <div class="col"><img class="img-fluid w-100 m-1" src="edited/mynewalpaper-07.jpg" alt=""></div>
